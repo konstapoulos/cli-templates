@@ -8,8 +8,8 @@ Code is able to:
   - ask user for secret data
   - perform http requests
   - keep cookie files
-  - run some other programs, supply args and get ouput
+  - run some other cli programs, supply args and get ouput
   - produce output in human and machine consumable way
   
-Most of command line tools require the same features. I was tired recalling and
-debugging this each time so I have created these templates.
+Most of command line tools require the same features. These template could save time  
+from reimplementing basic functionality each time.

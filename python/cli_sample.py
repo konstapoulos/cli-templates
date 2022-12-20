@@ -21,13 +21,13 @@ Options:
 Examples:
 
   # process string
-  cli_sample.py --string 'hello world'
+  ./cli_sample.py --string 'hello world'
 
   # process list of names from file names.txt
-  ccli_sample.py -f names.txtli_sample.py -f names.txt
+  ./cli_sample.py -f names.txtli_sample.py -f names.txt
 
   # fetch data from url and process it; verbose logging
-  # cli_sample.py --loglevel debug -u https://httpbin.org/json
+  ./cli_sample.py --loglevel debug -u https://httpbin.org/json
 """
 
 # more docopt examples:

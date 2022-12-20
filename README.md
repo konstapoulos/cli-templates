@@ -5,11 +5,13 @@ Code is able to:
 
   - parse arguments
   - perform logging
-  - ask user for secret data
   - perform http requests
+  - produce output in human and machine consumable way
+
+Would be nice to have:
   - keep cookie files
   - run some other cli programs, supply args and get ouput
-  - produce output in human and machine consumable way
+  - ask user for secret data
   
-Most of command line tools require the same features. These template could save time  
+Most of command line tools require the same features. These templates could save time  
 from reimplementing basic functionality each time.

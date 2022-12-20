@@ -4,14 +4,14 @@
 
 
 Usage:
-  cli_sample.py [options] (-s <string> | -f <file> | -u <url>)
-  cli_sample.py (-h | --help)
+  ./cli_sample.py [options] (-s <string> | -f <file> | -u <url>)
+  ./cli_sample.py (-h | --help)
 
 Options:
   -s, --string <string>        input data as a command line literal
   -f, --file <file>            input data from a file
   -u, --url <url>              input data to fetch from URL
-  -o, --output <file>          output file, [default: stdout]
+  -o, --output <file>          output file [default: stdout]
   --format <format>            output format: table, json, yaml [default: table]
   --loglevel <level>           logging level to use (debug, info, warning,
                                   error, critical) [default: info]
@@ -23,8 +23,8 @@ Examples:
   # process string
   ./cli_sample.py --string 'hello world'
 
-  # process list of names from file names.txt
-  ./cli_sample.py -f names.txtli_sample.py -f names.txt
+  # process list of names from file 'names.txt'
+  ./cli_sample.py -f names.txt 
 
   # fetch data from url and process it; verbose logging
   ./cli_sample.py --loglevel debug -u https://httpbin.org/json

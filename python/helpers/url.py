@@ -14,4 +14,4 @@ def process_url(url: str) -> str:
         response.raise_for_status()
         return response.text
     except requests.exceptions.RequestException as err:
-        raise CliError from err
+        raise CliError(err) from err

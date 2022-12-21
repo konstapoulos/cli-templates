@@ -12,7 +12,7 @@ Options:
   -f, --file <file>            input data from a file
   -u, --url <url>              input data to fetch from URL
   -o, --output <file>          output file [default: stdout]
-  --format <format>            output format: table, json, yaml [default: table]
+  --format <format>            output format: table, json, yaml, raw [default: table]
   --loglevel <level>           logging level to use (debug, info, warning,
                                   error, critical) [default: info]
   --logfile <file>             direct logging messages to file [default: stdout]
@@ -24,7 +24,7 @@ Examples:
   ./cli_sample.py --string 'hello world'
 
   # process list of names from file 'names.txt'
-  ./cli_sample.py -f names.txt 
+  ./cli_sample.py -f names.txt
 
   # fetch data from url and process it; verbose logging
   ./cli_sample.py --loglevel debug -u https://httpbin.org/json
@@ -34,6 +34,7 @@ Examples:
 # https://github.com/docopt/docopt/tree/master/examples
 
 import logging
+import sys
 
 from docopt import docopt
 
@@ -53,18 +54,19 @@ def main(arguments):
     data = None
 
     string = arguments['--string']
-    if string:
+    if string != None:
         data = process_string(string)
+    logging.debug(type(data))
 
     file = arguments['--file']
-    if file:
+    if file != None:
         data = process_file(file)
 
     url = arguments['--url']
-    if url:
+    if url != None:
         data = process_url(url)
 
-    print(format_output(arguments['--format'], data))
+    sys.stdout.write(str(format_output(arguments['--format'], data)))
 
 
 if __name__ == '__main__':

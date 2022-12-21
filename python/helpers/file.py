@@ -21,6 +21,6 @@ def process_file(path: str):
     """
     try:
         with open(path) as file:
-            return [l.strip() for l in file.readlines()]
+            return file.read()
     except OSError as err:
-        raise CliError from err
+        raise CliError(err) from err
